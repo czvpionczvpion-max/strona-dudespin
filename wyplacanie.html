@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak wypłacać z krypto do gotówki - CIOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            background-color: black;
+        }
+        
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./background.webp');
+            background-size: cover;
+            background-color: black;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+        
+        .content-overlay {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .instructions-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-section {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border: 2px solid #d3e512;
+        }
+        
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(19, 19, 19, 0.7);
+        }
+        
+        .hero-content {
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .gold-texture {
+            background: linear-gradient(to right, #b6c510, #ddf014);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 900;
+        }
+        
+        .intro-text {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .warning-box {
+            background: #8f000034;
+            border-left: 3px solid #ff000081;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .methods-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .method-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #d3e512;
+            background: rgb(19, 19, 19);
+            padding: 2rem;
+            height: 100%;
+        }
+        
+        .method-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #b6c510, #ddf014);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .method-text {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .features-list {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .features-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+        
+        .referral-link {
+            display: inline-block;
+            background: linear-gradient(to right, #b6c510, #ddf014);
+            color: black;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+        }
+        
+        .referral-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .disclaimer-box {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            padding: 1.5rem;
+            background: rgba(19, 19, 19, 0.7);
+            border-radius: 12px;
+            border: 1px solid rgba(211, 229, 18, 0.2);
+        }
+        
+        .disclaimer-text {
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .disclaimer-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        .back-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 20;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid rgba(211, 229, 18, 0.3);
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        
+        .back-link:hover {
+            color: #d3e512;
+            border-color: #d3e512;
+            transform: translateY(-2px);
+        }
+        
+        .back-icon {
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .method-card {
+                padding: 1.5rem;
+            }
+            
+            .back-button {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            
+            .back-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Alternatywna wersja z grubszymi paskami */
+        .candy-cane-border-thick {
+            border: 4px solid transparent;
+            background: 
+                linear-gradient(rgba(12, 12, 12, 1), rgba(12, 12, 12, 1)) padding-box,
+                repeating-linear-gradient(
+                    45deg,
+                    #ff0000 0%,
+                    #ff0000 20px,
+                    #ffffff 20px,
+                    #ffffff 40px
+                ) border-box;
+            box-shadow: 
+                0 0 25px rgba(255, 255, 255, 0.28),
+                0 0 50px rgba(255, 0, 0, 0.12),
+                inset 0 0 15px rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <!-- Tło z grafiką -->
+    <div class="background-image"></div>
+    
+    <div class="content-overlay">
+        <!-- Sekcja główna -->
+        <section class="instructions-container">
+            <!-- Hero sekcja -->
+            <div class="hero-section candy-cane-border-thick">
+                <div class="hero-background">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <h2 class="hero-title">
+                        Jak <span class="gold-texture">wypłacać</span> z krypto do gotówki
+                    </h2>
+                </div>
+            </div>
+            
+            <!-- Wstęp -->
+            <div class="intro-text">
+                Jeśli są to bardzo duże kwoty, to najlepiej za granicą, gdzie krypto jest nieopodatkowane albo jest bardzo mały procent. 
+                Poniżej przedstawiamy metody dla mniejszych kwot, do kilku tysięcy dolarów.
+            </div>
+            
+            <!-- Metody wypłat -->
+            <div class="methods-grid">
+                <!-- ZEN -->
+                <div class="method-card candy-cane-border-thick">
+                    <h3 class="method-title">ZEN - najmniejsze fee na kartę</h3>
+                    <p class="method-text">
+                        Mając konto ZEN możesz wpłacić kryptowaluty na giełdę Binance lub ByBit, następnie sprzedać je do USDT/USDC i wymienić na giełdzie do PLN. 
+                        Następnie należy podłączyć swoje konto ZEN w panelu giełdy, wypłata przychodzi w kilka sekund.
+                    </p>
+                    <div class="fee-info">
+                        <strong>Bardzo niskie fee, praktycznie wcale.</strong>
+                    </div>
+                </div>
+                
+                <!-- Revolut -->
+                <div class="method-card candy-cane-border-thick">
+                    <h3 class="method-title">Revolut</h3>
+                    <p class="method-text">
+                        Znany wszystkim Revolut oferuje również zamianę krypto na fiaty (czyli normalną walutę).
+                    </p>
+                    <p class="method-text">
+                        Przelewacie środki na adres podany w apce (pamiętajcie by nie pomylić chainów), a potem wymieniacie w aplikacji. 
+                        Jako źródło środków podajecie własne (giełda ByBit np.).
+                    </p>
+                    <div class="fee-info">
+                        <strong>Opcja polecana dla osób mało obeznanych z kryptowalutami i dysponującymi mniejszymi środkami np. z giveaway.</strong>
+                    </div>
+                    <a href="https://revolut.com/referral/?referral-code=szymon07n!NOV1-24-AR" target="_blank" class="referral-link">
+                        Zarejestruj się w Revolut
+                    </a>
+                </div>
+                
+                <!-- Crypto.com -->
+                <div class="method-card candy-cane-border-thick">
+                    <h3 class="method-title">Crypto.com</h3>
+                    <p class="method-text">
+                        Zamawiacie kartę od nich, wpłacacie pieniądze do serwisu, a potem doładowywujecie sobie kartę pożądaną kwotą.
+                    </p>
+                    <a href="https://crypto.com/app/asp2sszqxf" target="_blank" class="referral-link">
+                        Zarejestruj się w Crypto.com
+                    </a>
+                </div>
+                
+                <!-- Bitomaty -->
+                <div class="method-card candy-cane-border-thick">
+                    <h3 class="method-title">Bitomaty - najmniejsze fee do gotówki</h3>
+                    <p class="method-text">
+                        Dobrą opcją wypłaty jest też Bitomat - do 1000 EUR (czyli spokojnie do 1000 USD) w ramach jednego dnia bez żadnej weryfikacji wypłacicie.
+                    </p>
+                    <p class="method-text">
+                        Sprawdźcie lokalizację w Waszym mieście i stan na Bitomacie, a potem skorzystajcie ze strony do sprzedaży kryptowalut.
+                    </p>
+                    <div class="fee-info">
+                        <strong>Chyba najmniejsze fee jeśli chodzi o wypłatę gotówki, przy wypłacie 500 USDT fee to ledwo 4-5 złotych.</strong>
+                    </div>
+                    <div class="referral-links">
+                        <a href="https://www.bitomat.com/map" target="_blank" class="referral-link" style="margin-right: 0.5rem;">
+                            Sprawdź bitomaty
+                        </a>
+                        <a href="https://www.bitomat.com/sprzedaj-kryptowaluty" target="_blank" class="referral-link">
+                            Sprzedaj krypto
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Cashify -->
+                <div class="method-card candy-cane-border-thick">
+                    <h3 class="method-title">Cashify</h3>
+                    <p class="method-text">
+                        Wizyta w placówce w wielu miastach - przy transakcjach do 1000 EUR nie trzeba przechodzić weryfikacji danych osobowych. 
+                        Więc jak macie kilka tysięcy można przyjść kilka razy.
+                    </p>
+                    <p class="method-text">
+                        Najlepiej mieć tutaj już gotową kwotę w USDC oraz fee na wallecie typu Trust Wallet.
+                    </p>
+                    <div class="fee-info">
+                        <strong>Minusem jest fee, gdzie przy sprzedaży 500 USDT zapłacimy około 200 PLN fee.</strong>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sekcja bezpiecznego wypłacania z kasyna -->
+            <div class="method-card candy-cane-border-thick">
+                <h3 class="method-title">Jak bezpiecznie wypłacić kasę z kasyna?</h3>
+                <p class="method-text">
+                    <strong>Najlepszy, najbezpieczniejszy sposób - krypto.</strong><br>
+                    Kasyno → Crypto.com → Bankomat/Sklep<br>
+                    Chyba najprostszy sposób.
+                </p>
+                
+                <h4 style="margin: 1.5rem 0 1rem 0; color: #d3e512;">Co trzeba zrobić najpierw?</h4>
+                <ul class="steps-list">
+                    <li>Rejestracja na Crypto.com</li>
+                    <li>Zamówienie karty</li>
+                    <li>Instalacja Trust Wallet</li>
+                </ul>
+                
+                <h4 style="margin: 1.5rem 0 1rem 0; color: #d3e512;">A potem:</h4>
+                <ul class="steps-list">
+                    <li>Wypłata z kasyna w tym co się najbardziej opłaca przez niskie opłaty, np. LTC na portfel w Trust Wallet</li>
+                    <li>Wysyłka z Trust Wallet na konto w Crypto.com</li>
+                    <li>Zamiana kryptowaluty na kasę na karcie w aplikacji</li>
+                    <li>Wypłata w bankomacie lub kupno czegoś przy użyciu karty w sklepie czy przez internet</li>
+                </ul>
+                
+                <div class="fee-info">
+                    <strong>Teoretycznie można od razu z kasyna na Crypto.com, pomijając etap Trust Wallet, ale nie ma co ryzykować, zwiększamy bezpieczeństwo dzięki temu - Crypto.com dzięki temu nie wie że pieniądze są z kasyna.</strong>
+                </div>
+                
+                <h4 style="margin: 1.5rem 0 1rem 0; color: #d3e512;">Alternatywna ścieżka:</h4>
+                <p class="method-text">
+                    <strong>Kasyno → Binance/ByBit → Zen → Bankomat/Sklep</strong><br>
+                    Korzystamy tutaj z tego że Binance ma współpracę z ZEN.
+                </p>
+                
+                <h4 style="margin: 1.5rem 0 1rem 0; color: #d3e512;">Co trzeba zrobić najpierw?</h4>
+                <ul class="steps-list">
+                    <li>Rejestracja na Binance/ByBit</li>
+                    <li>Rejestracja na ZEN</li>
+                    <li>Zamówienie karty ZEN</li>
+                    <li>Instalacja Trust Wallet</li>
+                </ul>
+                
+                <h4 style="margin: 1.5rem 0 1rem 0; color: #d3e512;">A potem:</h4>
+                <ul class="steps-list">
+                    <li>Wypłata z kasyna w tym co się najbardziej opłaca przez niskie opłaty, np. LTC na portfel w Trust Wallet</li>
+                    <li>Wysyłka z Trust Wallet na Binance/ByBit</li>
+                    <li>Sprzedajemy krypto na Binance/ByBit</li>
+                    <li>Wypłata na ZEN, dzięki współpracy z Binance oraz ByBit jest w kilka minut</li>
+                    <li>Wypłata w bankomacie lub kupno czegoś przy użyciu karty w sklepie czy przez internet</li>
+                </ul>
+                
+                <div class="fee-info">
+                    <strong>Teoretycznie można od razu z kasyna na Binance/ByBit, pomijając etap Trust Wallet, ale nie ma co ryzykować, zwiększamy bezpieczeństwo dzięki temu - giełda nie wie że wysłaliśmy kasę z kasyna.</strong>
+                </div>
+                
+                <div class="referral-links">
+                    <a href="https://crypto.com/app/asp2sszqxf" target="_blank" class="referral-link" style="margin-right: 0.5rem;">
+                        Crypto.com
+                    </a>
+                    <a href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_00KSKM80SM" target="_blank" class="referral-link" style="margin-right: 0.5rem;">
+                        Binance
+                    </a>
+                    <a href="https://www.zen.com/" target="_blank" class="referral-link">
+                        ZEN
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Ważne informacje -->
+            <div class="warning-box">
+                <h4 class="warning-title">WAŻNE!!!</h4>
+                <p class="method-text">
+                    <strong>Pamiętajcie:</strong><br>
+                    Zawsze sprawdźcie czy adres na jaki wysyłacie kryptowaluty lub podajecie komuś żeby Wam wysłał jest poprawny.<br>
+                    Musi być ten sam chain (czyli jeśli macie USDT na chainie TRC20, musicie wysłać na adres na chainie TRC20, żadnym innym).<br>
+                    Jeśli korzystacie z prywatnego portfela, np. Trust Wallet, to oprócz samego USDT musicie mieć też odpowiednią walutę by pokryć koszt transakcji czyli TRX dla TRC20 lub ETH dla ERC20.
+                </p>
+            </div>
+            
+            <!-- Disclaimer -->
+            <div class="disclaimer-box">
+                <p class="disclaimer-text">
+                    Ta strona internetowa prezentuje informacje o ekskluzywnych kasynach oraz zawiera odnośniki partnerskie, które są przeznaczone wyłącznie dla osób przebywających w regionach, gdzie internetowe gry losowe są dozwolone przez prawo.
+                </p>
+                <p class="disclaimer-text">
+                    Obowiązkiem użytkowników jest upewnienie się, że ich aktywność jest zgodna z lokalnymi przepisami. Nie zachęcamy ani nie popieramy nielegalnych form hazardu.
+                </p>
+                <p class="disclaimer-text">
+                    Zanim skorzystasz z jakichkolwiek ofert przedstawionych na tej stronie, gorąco rekomendujemy zweryfikowanie legalności hazardu online w Twojej lokalizacji.
+                </p>
+            </div>
+            
+            <!-- Przycisk powrotu -->
+            <div class="back-button">
+                <a class="back-link" href="./index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="back-icon">
+                        <path d="m12 19-7-7 7-7"></path>
+                        <path d="M19 12H5"></path>
+                    </svg>
+                    <span>Powrót</span>
+                </a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

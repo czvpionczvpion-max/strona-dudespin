@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak omijać blokady dostawcy internetu - CIOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            background-color: black;
+        }
+        
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./background.webp');
+            background-size: cover;
+            background-color: black;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+        
+        .content-overlay {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom right, #d3e512, black);
+            padding: 2px;
+        }
+        
+        .logo-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+        
+        .instructions-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-section {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(19, 19, 19, 0.7);
+        }
+        
+        .hero-content {
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .gold-texture {
+            background: linear-gradient(to right, #b6c510, #ddf014);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 900;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .methods-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .method-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #d3e512;
+            background: rgba(19, 19, 19, 0.8);
+        }
+        
+        .method-number {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #d3e512;
+            color: black;
+            font-weight: 700;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.25rem;
+        }
+        
+        .method-content {
+            padding: 3rem 2rem 2rem;
+        }
+        
+        .method-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #b6c510, #ddf014);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .method-text {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .dns-list {
+            margin-bottom: 1.5rem;
+        }
+        
+        .dns-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .dns-values {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .dns-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+            margin-bottom: 0.5rem;
+        }
+        
+        .dns-item:hover {
+            background: rgba(211, 229, 18, 0.1);
+        }
+        
+        .dns-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .dns-ip {
+            margin-right: 0.5rem;
+        }
+        
+        .copy-icon {
+            color: #d3e512;
+        }
+        
+        .vpn-providers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .vpn-provider {
+            background: linear-gradient(to right, #b6c510, #ddf014);
+            color: black;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .disclaimer-box {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            padding: 1.5rem;
+            background: rgba(19, 19, 19, 0.7);
+            border-radius: 12px;
+            border: 1px solid rgba(211, 229, 18, 0.2);
+        }
+        
+        .disclaimer-text {
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .disclaimer-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        .back-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 20;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid rgba(211, 229, 18, 0.3);
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        
+        .back-link:hover {
+            color: #d3e512;
+            border-color: #d3e512;
+            transform: translateY(-2px);
+        }
+        
+        .back-icon {
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .method-title {
+                font-size: 2rem;
+            }
+            
+            .method-content {
+                padding: 2.5rem 1.5rem 1.5rem;
+            }
+            
+            .back-button {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            
+            .back-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Alternatywna wersja z grubszymi paskami */
+        .candy-cane-border-thick {
+            border: 4px solid transparent;
+            background: 
+                linear-gradient(rgba(12, 12, 12, 1), rgba(12, 12, 12, 1)) padding-box,
+                repeating-linear-gradient(
+                    45deg,
+                    #ff0000 0%,
+                    #ff0000 20px,
+                    #ffffff 20px,
+                    #ffffff 40px
+                ) border-box;
+            box-shadow: 
+                0 0 25px rgba(255, 255, 255, 0.28),
+                0 0 50px rgba(255, 0, 0, 0.12),
+                inset 0 0 15px rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <!-- Tło z grafiką -->
+    <div class="background-image"></div>
+    
+    <div class="content-overlay">
+        <!-- Sekcja główna -->
+        <section class="instructions-container">
+            <!-- Hero sekcja -->
+            <div class="hero-section candy-cane-border-thick">
+                <div class="hero-content">
+                    <h2 class="hero-title">
+                        Jak omijać <span class="gold-texture">blokady</span><br>dostawcy internetu
+                    </h2>
+                </div>
+            </div>
+            
+            <!-- Tytuł sekcji -->
+            <h3 class="section-title">
+                Dwie metody <span class="gold-texture">omijania</span> blokad
+            </h3>
+            
+            <!-- Karty z metodami -->
+            <div class="methods-grid">
+                <!-- Metoda 1: DNS -->
+                <div class="method-card candy-cane-border-thick">
+                    <div class="method-number">1.</div>
+                    <div class="method-content">
+                        <h4 class="method-title">DNS</h4>
+                        <p class="method-text">
+                            Najłatwiejszym rozwiązaniem w tej sytuacji jest zmiana
+                            domyślnych serwerów DNS na inne. Można to zrobić bezpośrednio
+                            w ustawieniach routera – wtedy każde urządzenie podłączone do
+                            sieci automatycznie będzie korzystać z nowych DNS – albo
+                            indywidualnie na wybranym urządzeniu.
+                        </p>
+                        <p class="method-text">
+                            Po takiej zmianie, w zdecydowanej większości przypadków,
+                            korzystanie z VPN nie będzie już konieczne.
+                        </p>
+                        
+                        <div class="dns-list">
+                            <h5 class="dns-title">
+                                Rekomendowane DNS (cloudflare):
+                            </h5>
+                            <div class="dns-values">
+                                <div class="dns-item">
+                                    <span class="dns-ip">1.1.1.1</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="copy-icon">
+                                        <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                                        <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                                    </svg>
+                                </div>
+                                <div class="dns-item">
+                                    <span class="dns-ip">1.0.0.1</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="copy-icon">
+                                        <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                                        <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Metoda 2: VPN -->
+                <div class="method-card candy-cane-border-thick">
+                    <div class="method-number">2.</div>
+                    <div class="method-content">
+                        <h4 class="method-title">VPN</h4>
+                        <p class="method-text">
+                            Jeśli wolicie korzystać z VPN, to to dla Was wygodniejszy
+                            sposób na dostęp do zablokowanych stron, również jest to dobra
+                            opcja. VPN (wirtualna sieć prywatna) pozwala zmienić
+                            lokalizację IP, szyfruje połączenia, dzięki czemu możecie
+                            omijać blokady regionalne i zwiększyć swoją prywatność online.
+                        </p>
+                        <p class="method-text">
+                            Wystarczy zainstalować aplikację wybranego dostawcy, zalogować się, 
+                            wybrać kraj i połączyć – to wszystko. VPN przyda się zwłaszcza przy 
+                            korzystaniu z serwisów niedostępnych w Polsce, jak sloty czy zagraniczne 
+                            seriale Netflix.
+                        </p>
+                        
+                        <div class="vpn-providers">
+                            <span class="vpn-provider">NordVPN</span>
+                            <span class="vpn-provider">Surfshark</span>
+                            <span class="vpn-provider">ProtonVPN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disclaimer -->
+            <div class="disclaimer-box">
+                <p class="disclaimer-text">
+                    Ta strona internetowa prezentuje informacje o ekskluzywnych
+                    kasynach oraz zawiera odnośniki partnerskie, które są przeznaczone
+                    wyłącznie dla osób przebywających w regionach, gdzie internetowe
+                    gry losowe są dozwolone przez prawo.
+                </p>
+                <p class="disclaimer-text">
+                    Obowiązkiem użytkowników jest upewnienie się, że ich aktywność
+                    jest zgodna z lokalnymi przepisami. Nie zachęcamy ani nie
+                    popieramy nielegalnych form hazardu.
+                </p>
+                <p class="disclaimer-text">
+                    Zanim skorzystasz z jakichkolwiek ofert przedstawionych na tej
+                    stronie, gorąco rekomendujemy zweryfikowanie legalności hazardu
+                    online w Twojej lokalizacji.
+                </p>
+            </div>
+            
+            <!-- Przycisk powrotu -->
+            <div class="back-button">
+                <a class="back-link" href="./index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="back-icon">
+                        <path d="m12 19-7-7 7-7"></path>
+                        <path d="M19 12H5"></path>
+                    </svg>
+                    <span>Powrót</span>
+                </a>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        // Funkcja do kopiowania adresów DNS
+        document.querySelectorAll('.dns-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const ip = this.querySelector('.dns-ip').textContent;
+                navigator.clipboard.writeText(ip).then(() => {
+                    // Można dodać powiadomienie o skopiowaniu
+                    console.log(`Skopiowano: ${ip}`);
+                }).catch(err => {
+                    console.error('Błąd kopiowania: ', err);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

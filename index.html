@@ -1,0 +1,2293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ŚWIĘTA Z CIOSEM - NAJLEPSZE BONUSY POWITALNE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./favicon.png">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="ŚWIĘTA Z CIOSEM - WYGRAJ 10.000zŁ!">
+    <meta property="og:description" content="Zarejestruj się z kodem CIOS, zrób depozyt i wygraj 1.000zł! Co 2 dni losujemy zwycięzcę.">
+    <meta property="og:image" content="./favicon.png">
+    <meta property="og:type" content="website">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./background.webp');
+            background-size: cover;
+            background-color: rgb(0, 0, 0);
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+        
+        .content-overlay {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom right, #8b0404, black);
+            padding: 2px;
+        }
+        
+        .logo-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+        
+        .leaderboard-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .prize-amount {
+            font-family: 'Tilt Neon', sans-serif;
+            font-weight: 900;
+            font-size: 3.2rem;
+            background: linear-gradient(to right, #ffffff, #ffffff, #ffffff);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 5px #ffffff;
+            margin-bottom: 1rem;
+        }
+        
+        .leaderboard-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .description {
+            font-size: 1rem;
+            color: #d1d5db;
+            max-width: 600px;
+            margin: 1rem auto 1rem;
+        }
+        
+        .code-highlight {
+            background: #a3060624;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #a30606;
+        }
+        
+        .partners {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stake-logo {
+            height: 4rem;
+        }
+        
+        .tyceno-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 3rem;
+            background: linear-gradient(to right, #a30606, #910606);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+        
+        .divider-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(139, 171, 185, 0.2), rgba(139, 171, 185, 0.5));
+        }
+
+        .divider-line-reverse {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to left, transparent, rgba(139, 171, 185, 0.2), rgba(139, 171, 185, 0.5));
+        }
+        
+        .divider-center {
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .divider-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #8babb9;
+        }
+        
+        .divider-dot-main {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+
+        }
+
+        .divider-dot-main>p {
+            margin-top: -0.5rem;
+            margin-left: -0.25rem;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #910606, #a30606);
+            color: black;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(to right, #970606, #a30606);
+            transform: scale(1.05);
+        }
+        
+        .btn-secondary {
+            background: rgba(38, 38, 38, 0.8);
+            color: white;
+            border: 1px solid rgba(55, 65, 81, 0.7);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(55, 65, 81, 0.8);
+            border-color: rgba(107, 114, 128, 0.7);
+        }
+        
+        .rules-card {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: rgba(23, 23, 23, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+        
+        .rules-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .rules-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .rules-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(38, 38, 38, 0.5);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(55, 65, 81, 0.5);
+        }
+        
+        .rules-content {
+            padding: 1.5rem;
+        }
+        
+        .warning-box {
+            background: rgba(214, 169, 93, 0.1);
+            border-left: 2px solid #a30606;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .warning-icon {
+            color: #a30606;
+            flex-shrink: 0;
+        }
+        
+        .rtp-rules {
+            background: rgba(38, 38, 38, 0.4);
+            border: 1px solid rgba(55, 65, 81, 0.5);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .rtp-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .rtp-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+        
+        .rtp-item {
+            background: rgba(23, 23, 23, 0.5);
+            border: 1px solid rgba(55, 65, 81, 0.5);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        
+        .rtp-type {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .rtp-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        
+        .rtp-description {
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+        
+        .help-box {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: rgba(38, 38, 38, 0.3);
+            border: 1px solid rgba(55, 65, 81, 0.3);
+            border-radius: 8px;
+        }
+
+        /* Sekcja rekomendacji */
+        .recommendations-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 10;
+            margin-bottom: -0.5rem;
+            margin-top: -2.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            padding-top: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                padding-top: 2rem;
+            }
+        }
+
+        .section-subtitle {
+            font-size: 0.875rem;
+            text-align: center;
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @media (min-width: 768px) {
+            .section-subtitle {
+                font-size: 1.25rem;
+                margin-bottom: 3rem;
+            }
+        }
+
+        .magical-text {
+            background: linear-gradient(to right, #ff1414, #ff2020, #ff1414);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 900;
+            position: relative;
+            text-shadow: 0 0 10px rgb(139, 0, 0);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.6; }
+        }
+
+        .casino-card-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .casino-card {
+            background: transparent;
+            border-radius: 12px;
+            position: relative;
+            min-height: 550px;
+            width: 450px;
+            max-width: 95%;
+            overflow: hidden;
+            box-shadow: 
+                0 0 15px rgba(255, 0, 0, 0.5),
+                0 0 30px rgba(255, 50, 50, 0.3),
+                0 0 45px rgba(255, 100, 100, 0.2),
+                inset 0 0 20px rgba(255, 200, 200, 0.1);
+            animation: ice-compact-glow 3s ease-in-out infinite alternate;
+            border: 1px solid rgba(255, 0, 0, 0.4);
+            transform: rotate(-1deg);
+            transition: transform 0.3s ease;
+        }
+
+        .casino-card:hover {
+            transform: rotate(-1deg) scale(1.02);
+        }
+
+        .casino-card-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .casino-card-bg img {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+            color: transparent;
+        }
+
+        .casino-card-bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(12, 12, 12, 0.8);
+        }
+
+        .casino-card-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-weight: bold;
+        }
+
+        .casino-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .casino-logo {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .casino-logo img {
+            object-fit: contain;
+            width: 60%;
+            color: transparent;
+        }
+
+        @media (min-width: 768px) {
+            .casino-logo img {
+                width: 55%;
+            }
+        }
+
+        .bonus-badge {
+            background: linear-gradient(to right, #0d738d, #18d1ff , #1ac9e4, #18d1ff);
+            border-radius: 9999px;
+            text-align: center;
+            padding: 0.25rem 0.75rem;
+            width: fit-content;
+            margin: 0 auto 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .bonus-badge {
+                margin-bottom: 1.5rem;
+                padding: 0.25rem 1rem;
+            }
+        }
+
+        .bonus-badge span {
+            font-weight: 800;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .casino-card h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 0.25rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .casino-card h4 {
+                font-size: 1.875rem;
+                margin-bottom: 0.5rem;
+                margin-top: 0;
+            }
+        }
+
+        .casino-card p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .casino-card p {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .pros-section {
+            margin-bottom: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .pros-section {
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+            }
+        }
+
+        .pros-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .pros-title {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .pros-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .pros-list {
+                gap: 0.75rem;
+            }
+        }
+
+        .pros-list li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pros-list svg {
+            margin-right: 0.5rem;
+            color: #18d1ff;
+            flex-shrink: 0;
+        }
+
+        .pros-list span {
+            color: white;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 768px) {
+            .pros-list span {
+                font-size: 1rem;
+            }
+        }
+
+        .bonus-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: auto;
+            padding-top: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .bonus-button-container {
+                padding-top: 0;
+            }
+        }
+
+        .bonus-button {
+            background: linear-gradient(to right, #0d738d, #18d1ff , #1ac9e4, #18d1ff);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .bonus-button {
+                padding: 0.75rem 1.5rem;
+            }
+        }
+
+        .bonus-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 5px rgba(24, 209, 255, 0.7);
+        }
+
+        .bonus-button span {
+            font-weight: 800;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            text-shadow: 0 0 5px #00000060;
+        }
+        
+        /* Nowy footer */
+        .footer-disclaimer {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid #c0c0c060;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 -5px 20px #ececec24;
+        }
+        
+        .footer-text {
+            font-size: 0.85rem;
+            color: #d1d5db;
+            line-height: 1.5;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .footer-text strong {
+            color: #960606;
+            font-weight: 600;
+        }
+        
+        /* Selfie gradient section */
+        .selfie-gradient {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, 
+                #ff0000 0%, 
+                #ff6b6b 25%, 
+                #ffd93d 50%, 
+                #6bcf7f 75%, 
+                #4d96ff 100%);
+            margin: 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
+            animation: gradient-rotate 10s linear infinite;
+        }
+
+        .selfie-gradient::before {
+            content: '';
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1;
+        }
+
+        .selfie-gradient-text {
+            position: relative;
+            z-index: 2;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2rem;
+            background: linear-gradient(45deg, 
+                #ff0000 0%, 
+                #ff6b6b 25%, 
+                #ffd93d 50%, 
+                #6bcf7f 75%, 
+                #4d96ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @keyframes gradient-rotate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Prize info section */
+        .prize-info {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 1.5rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            border-left: 4px solid #a30606;
+            box-shadow: 0 4px 20px rgba(163, 6, 6, 0.2);
+        }
+
+        .prize-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .prize-info h3 .highlight {
+            color: #a30606;
+        }
+
+        .prize-details {
+            background: rgba(163, 6, 6, 0);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .prize-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #a30606;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirements-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;    
+        }
+
+        .requirements-list li:last-child {
+            border-bottom: none;
+        }
+
+        .requirement-icon {
+            color: #a30606;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+        .requirement-text {
+            font-size: 0.95rem;
+            color: #fff;
+        }
+
+        .requirement-note {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            margin-top: 0.25rem;
+        }
+
+        .account-note {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .account-note strong {
+            color: #ffd700;
+        }
+        
+        @media (max-width: 768px) {
+            .prize-amount {
+                font-size: 4rem;
+            }
+            
+            .leaderboard-title {
+                font-size: 2rem;
+            }
+            
+            .partners {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .rtp-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-disclaimer {
+                padding: 1rem;
+            }
+            
+            .footer-text {
+                font-size: 0.8rem;
+            }
+
+            .casino-card {
+                transform: rotate(0deg);
+            }
+
+            .casino-card:hover {
+                transform: scale(1.02);
+            }
+
+            .selfie-gradient {
+                width: 200px;
+                height: 200px;
+            }
+
+            .selfie-gradient::before {
+                width: 190px;
+                height: 190px;
+            }
+
+            .selfie-gradient-text {
+                font-size: 1.5rem;
+            }
+
+            .prize-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .prize-info h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid #a30606;
+            box-shadow: 0 0 20px #a3060650;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .profile-circle::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, #8a0202, #a30606, #a30606);
+            background-size: 200% 200%;
+            animation: neon-glow 3s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes neon-glow {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .prize-amount {
+                font-size: 3.5rem !important;
+                line-height: 1.2;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .leaderboard-title,
+        .prize-amount,
+        .tyceno-text,
+        .section-title,
+        .section-subtitle,
+        .btn,
+        .bonus-badge span,
+        .bonus-button span,
+        .footer-text,
+        .pros-title,
+        .casino-card h4,
+        .casino-card p,
+        .pros-list span {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Dodatkowe style dla różnych wag Montserrat */
+        .leaderboard-title {
+            font-weight: 700;
+        }
+
+        .prize-amount {
+            font-weight: 900;
+        }
+
+        .tyceno-text {
+            font-weight: 900;
+        }
+
+        .section-title {
+            font-weight: 700;
+        }
+
+        .btn {
+            font-weight: 700;
+        }
+
+        .bonus-badge span {
+            font-weight: 800;
+        }
+
+        .bonus-button span {
+            font-weight: 800;
+        }
+
+        .footer-text {
+            font-weight: 400;
+        }
+
+        .pros-title {
+            font-weight: 700;
+        }
+
+        .casino-card h4 {
+            font-weight: 700;
+        }
+
+        .casino-card p {
+            font-weight: 400;
+        }
+
+        .pros-list span {
+            font-weight: 500;
+        }
+
+        /* Sekcja instrukcji */
+        .instructions-section {
+            position: relative;
+            padding: 4rem 1rem;
+            margin-bottom: 0;
+        }
+
+        .instructions-background {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            /* background-image: url('./background.webp'); */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .instructions-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .instructions-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .instructions-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+        }
+
+        .instructions-gradient {
+            background: linear-gradient(to right, #920505, #a30606);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 900;
+            position: relative;
+        }
+
+        .instructions-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .instructions-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .instruction-card {
+            position: relative;
+            background: rgba(19, 19, 19, 0.8);
+            border-radius: 30px;
+            overflow: hidden;
+            height: 100%;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .instruction-card.active {
+            background: rgba(19, 19, 19, 0.95);
+            cursor: pointer;
+        }
+
+        .instruction-card.active:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px #ffffff18;
+            border-color: #ffffff24;
+        }
+
+        .instruction-card.disabled {
+            opacity: 0.6;
+        }
+
+        .info-icon {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #9c0606;
+            border-radius: 50%;
+            padding: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-icon svg {
+            color: #000000;
+        }
+
+        .instruction-content {
+            text-align: center;
+            z-index: 10;
+        }
+
+        .instruction-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .instruction-card.disabled .instruction-title {
+            opacity: 0.5;
+        }
+
+        .instruction-link {
+            text-decoration: none;
+            display: block;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .instructions-title {
+                font-size: 2rem;
+            }
+            
+            .instruction-card {
+                min-height: 150px;
+                padding: 2rem 1rem;
+            }
+            
+            .instruction-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Wersja z super białym kolorem i lepszym kontrastem */
+        .candy-cane-text {
+            color: #ff0000;
+            background: linear-gradient(
+                45deg,
+                #ff0000 25%,
+                #fffff0 25%,
+                #fffff0 50%,
+                #ff0000 50%,
+                #ff0000 75%,
+                #fffff0 75%,
+                #fffff0
+            );
+            background-size: 20px 20px;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            font-weight: 900;
+            position: relative;
+            filter: contrast(1.2) brightness(1.1);
+            text-shadow: 
+                0 0 8px rgba(255, 255, 240, 0.3),
+                0 0 16px rgba(255, 0, 0, 0.3);
+        }
+
+        /* Candy cane border dla casino-card */
+        .casino-card.candy-cane-border {
+            position: relative;
+            border: 3px solid transparent;
+            border-radius: 15px;
+            background: 
+                linear-gradient(rgba(12, 12, 12, 0.9), rgba(12, 12, 12, 0.9)) padding-box,
+                repeating-linear-gradient(
+                    45deg,
+                    #ff0000 0%,
+                    #ff0000 12.5%,
+                    #ffffff 12.5%,
+                    #ffffff 25%,
+                    #ff0000 25%,
+                    #ff0000 37.5%,
+                    #ffffff 37.5%,
+                    #ffffff 50%,
+                    #ff0000 50%,
+                    #ff0000 62.5%,
+                    #ffffff 62.5%,
+                    #ffffff 75%,
+                    #ff0000 75%,
+                    #ff0000 87.5%,
+                    #ffffff 87.5%,
+                    #ffffff 100%
+                ) border-box;
+            background-size: 40px 40px;
+            animation: candy-cane-rotate 20s linear infinite;
+            box-shadow: 
+                0 0 20px rgba(255, 0, 0, 0.3),
+                0 0 40px rgba(255, 0, 0, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Alternatywna wersja z grubszymi paskami */
+        .casino-card.candy-cane-border-thick {
+            border: 4px solid transparent;
+            background: 
+                linear-gradient(rgba(12, 12, 12, 0.9), rgba(12, 12, 12, 0.9)) padding-box,
+                repeating-linear-gradient(
+                    45deg,
+                    #ff0000 0%,
+                    #ff0000 20px,
+                    #ffffff 20px,
+                    #ffffff 40px
+                ) border-box;
+            box-shadow: 
+                0 0 25px rgba(255, 255, 255, 0.28),
+                0 0 50px rgba(255, 0, 0, 0.12),
+                inset 0 0 15px rgba(255, 255, 255, 0.15);
+        }
+
+        /* Wersja z efektem świecenia */
+        .casino-card.candy-cane-border-glow {
+            border: 3px solid transparent;
+            background: 
+                linear-gradient(rgba(12, 12, 12, 0.95), rgba(12, 12, 12, 0.95)) padding-box,
+                repeating-linear-gradient(
+                    45deg,
+                    #ff0000 0%,
+                    #ff0000 15px,
+                    #ffffcc 15px,
+                    #ffffcc 30px
+                ) border-box;
+            box-shadow: 
+                0 0 30px rgba(255, 0, 0, 0.5),
+                0 0 60px rgba(255, 0, 0, 0.3),
+                0 0 90px rgba(255, 255, 255, 0.1),
+                inset 0 0 25px rgba(255, 255, 255, 0.2);
+            animation: candy-cane-glow 3s ease-in-out infinite alternate;
+        }
+
+        /* Wersja minimalistyczna */
+        .casino-card.candy-cane-border-simple {
+            border: 2px solid transparent;
+            background: 
+                linear-gradient(rgba(12, 12, 12, 0.9), rgba(12, 12, 12, 0.9)) padding-box,
+                repeating-linear-gradient(
+                    45deg,
+                    #ff0000,
+                    #ff0000 10px,
+                    #ffffff 10px,
+                    #ffffff 20px
+                ) border-box;
+        }
+
+        /* Animacja obracania wzoru */
+        @keyframes candy-cane-rotate {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 40px 40px;
+            }
+        }
+
+        /* Animacja świecenia */
+        @keyframes candy-cane-glow {
+            0% {
+                box-shadow: 
+                    0 0 20px rgba(255, 0, 0, 0.4),
+                    0 0 40px rgba(255, 0, 0, 0.2),
+                    inset 0 0 15px rgba(255, 255, 255, 0.1);
+            }
+            100% {
+                box-shadow: 
+                    0 0 30px rgba(255, 0, 0, 0.6),
+                    0 0 60px rgba(255, 0, 0, 0.4),
+                    0 0 90px rgba(255, 255, 255, 0.2),
+                    inset 0 0 25px rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        /* Wersja z czerwonymi i białymi kulami w rogach */
+        .casino-card.candy-cane-border-dots {
+            position: relative;
+            border: 2px solid #ff0000;
+            border-radius: 15px;
+            overflow: visible;
+        }
+
+        .casino-card.candy-cane-border-dots::before,
+        .casino-card.candy-cane-border-dots::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff0000;
+            z-index: 2;
+        }
+
+        .casino-card.candy-cane-border-dots::before {
+            top: -6px;
+            left: -6px;
+            box-shadow: 
+                0 0 0 2px #ffffff,
+                0 0 0 4px #ff0000,
+                0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .casino-card.candy-cane-border-dots::after {
+            bottom: -6px;
+            right: -6px;
+            box-shadow: 
+                0 0 0 2px #ffffff,
+                0 0 0 4px #ff0000,
+                0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .casino-card.candy-cane-border-dots .corner-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ffffff;
+            z-index: 2;
+            box-shadow: 
+                0 0 0 2px #ff0000,
+                0 0 0 4px #ffffff,
+                0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .casino-card.candy-cane-border-dots .corner-dot.top-right {
+            top: -6px;
+            right: -6px;
+        }
+
+        .casino-card.candy-cane-border-dots .corner-dot.bottom-left {
+            bottom: -6px;
+            left: -6px;
+        }
+
+        /* --- NOWE STYLE DLA ZDJĘCIA TYPU "SANTA FADE" --- */
+        .santa-fade-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            width: 100%;
+            /* Ujemny margines sprawia, że tekst poniżej nachodzi na wygaszoną część zdjęcia,
+            tworząc efekt głębi jak na zdjęciu referencyjnym. Dostosuj wartość w razie potrzeby. */
+            margin-bottom: -3rem;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 0; /* Zdjęcie pod spodem */
+
+        }
+
+        .santa-fade-image {
+            width: 100%;
+            /* Dostosuj max-width zależnie od tego, jak duże ma być zdjęcie postaci */
+            max-width: 400px;
+            height: auto;
+            display: block;
+            
+            /* Opcjonalnie: Dodaje subtelny cień, aby postać lepiej "siedziała" w tle */
+            filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.5));
+
+            margin-bottom: 10px;
+
+        }
+
+        /* Modyfikacja istniejącej klasy tytułu, aby na pewno był NAD zdjęciem */
+        .prize-amount {
+            position: relative;
+            z-index: 2;
+            /* Opcjonalnie: dodanie lekkiego cienia pod tekstem dla lepszej czytelności na tle zdjęcia */
+        }
+
+        /* Wersja mobilna */
+        @media (max-width: 768px) {
+            .santa-fade-container {
+                margin-bottom: -3rem;
+                margin-top: 0.5rem;
+            }
+            
+            .santa-fade-image {
+                max-width: 380px; /* Mniejsze zdjęcie na telefonach */
+                /* Na mniejszych ekranach zanikanie zaczyna się nieco później */
+            }
+        }
+
+        .emphasis-headline-red {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            background: linear-gradient(to right, #ff1414, #ff2020, #ff1414);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgb(139, 3, 3);
+            margin-bottom: 1rem; 
+        }
+
+        @media (max-width: 768px) {
+            .mobile-top-logo {
+                opacity: 1;
+            }
+            .mobile-top-logo img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .mobile-top-logo {
+                opacity: 0;
+            }
+        }
+
+        .mobile-top-logo.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .mobile-top-logo {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1000;
+            width: 160px;
+            height: auto;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .neonText {
+            color: #eee;
+            text-shadow:
+                0 0 7px #eee,
+                0 0 21px #5271ff,
+                0 0 42px #5271ff;
+        }
+        /* Kompaktowa lodowa tabela informacji - zoptymalizowana mobilnie */
+        .neon-info-table.ice-compact {
+            width: 100%;
+            max-width: 700px;
+            margin: 1.5rem auto;
+            background: rgba(10, 0, 0, 0.95); /* Czarne tło z czerwonym odcieniem */
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            padding: 2px;
+            box-shadow: 
+                0 0 15px rgba(255, 0, 0, 0.5),
+                0 0 30px rgba(255, 50, 50, 0.3),
+                0 0 45px rgba(255, 100, 100, 0.2),
+                inset 0 0 20px rgba(255, 200, 200, 0.1);
+            animation: ice-compact-glow 3s ease-in-out infinite alternate;
+            border: 1px solid rgba(255, 0, 0, 0.4);
+        }
+
+        /* Neonowe dekoracje - rogi */
+        .neon-info-table.ice-compact::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            border-radius: 19px;
+            background: linear-gradient(45deg, 
+                #990000, 
+                #cc0000, 
+                #ff3333,
+                #cc0000,
+                #990000);
+            background-size: 300% 300%;
+            z-index: -1;
+            animation: ice-border-rotate 3s linear infinite;
+            opacity: 0.8;
+        }
+
+        /* Neonowe narożniki - dekoracja 1 */
+        .neon-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            z-index: 2;
+        }
+
+        /* Neonowe linie boczne */
+        .neon-side-line {
+            position: absolute;
+            background: linear-gradient(to bottom, 
+                transparent, 
+                #cc0000, 
+                #ff3333, 
+                #cc0000, 
+                transparent);
+            width: 2px;
+            height: 60%;
+            opacity: 0.7;
+            animation: neon-side-glow 2s ease-in-out infinite alternate;
+        }
+
+        .neon-side-line.left {
+            left: 10px;
+            top: 20%;
+            box-shadow: 
+                -3px 0 10px rgba(204, 0, 0, 0.5),
+                -6px 0 15px rgba(255, 51, 51, 0.3);
+        }
+
+        .neon-side-line.right {
+            right: 10px;
+            top: 20%;
+            box-shadow: 
+                3px 0 10px rgba(204, 0, 0, 0.5),
+                6px 0 15px rgba(255, 51, 51, 0.3);
+        }
+
+        /* Główne wnętrze tabeli */
+        .neon-info-table.ice-compact .table-inner {
+            background: linear-gradient(135deg, 
+                rgba(15, 0, 0, 0.95) 0%,
+                rgba(20, 0, 0, 0.95) 100%);
+            border-radius: 16px;
+            padding: 1.2rem;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(255, 0, 0, 0.2);
+        }
+
+        /* Nagłówek */
+        .neon-info-table.ice-compact .table-header {
+            text-align: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .neon-info-table.ice-compact .table-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                #cc0000, 
+                #ff3333,
+                #cc0000,
+                transparent);
+            border-radius: 1px;
+            box-shadow: 0 0 10px rgba(204, 0, 0, 0.5);
+        }
+        .neon-info-table.ice-compact .table-title {
+            font-family: 'Tilt Neon', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.3rem;
+            text-shadow: 
+                0 0 8px rgba(255, 0, 0, 0.7),
+                0 0 15px rgba(255, 50, 50, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        .neon-info-table.ice-compact .table-subtitle {
+            font-family: 'Tilt Neon', sans-serif;
+            font-size: 0.9rem;
+            color: #ffcccc;
+            opacity: 0.9;
+        }
+
+        /* Kompaktowy grid - OPTYMALIZACJA MOBILNA */
+        .neon-info-table.ice-compact .info-grid-compact {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* MOBILE: Jeden kolumna, mniejsze wymiary */
+        @media (max-width: 768px) {
+            .neon-info-table.ice-compact {
+                max-width: 95%;
+                margin: 1rem auto;
+                padding: 1px;
+            }
+            
+            .neon-info-table.ice-compact .table-inner {
+                padding: 0.8rem;
+            }
+            
+            .neon-info-table.ice-compact .info-grid-compact {
+                grid-template-columns: 1fr;
+                gap: 0.6rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .neon-info-table.ice-compact .table-title {
+                font-size: 1.3rem;
+                margin-bottom: 0.2rem;
+            }
+            
+            .neon-info-table.ice-compact .table-subtitle {
+                font-size: 0.8rem;
+            }
+            
+            /* Ukryj niektóre dekoracje na mobile */
+            .neon-side-line {
+                display: none;
+            }
+            
+            .neon-corner {
+                width: 15px;
+                height: 15px;
+            }
+            
+            .neon-dot {
+                width: 4px;
+                height: 4px;
+            }
+            
+            .neon-corner.tl, .neon-dot.tl {
+                top: 4px;
+                left: 4px;
+            }
+            
+            .neon-corner.tr, .neon-dot.tr {
+                top: 4px;
+                right: 4px;
+            }
+            
+            .neon-corner.bl, .neon-dot.bl {
+                bottom: 4px;
+                left: 4px;
+            }
+            
+            .neon-corner.br, .neon-dot.br {
+                bottom: 4px;
+                right: 4px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .neon-info-table.ice-compact .table-title {
+                font-size: 1.1rem;
+            }
+            
+            .neon-info-table.ice-compact .table-subtitle {
+                font-size: 0.75rem;
+            }
+            
+            .neon-info-table.ice-compact .table-inner {
+                padding: 0.6rem;
+            }
+        }
+
+        /* Elementy gridu */
+        .neon-info-table.ice-compact .info-item-compact {
+            background: rgba(20, 0, 0, 0.8);
+            border-radius: 8px;
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .neon-info-table.ice-compact .info-item-compact:hover {
+            border-color: rgba(255, 100, 100, 0.6);
+            box-shadow: 
+                0 0 12px rgba(255, 0, 0, 0.3),
+                inset 0 0 8px rgba(255, 150, 150, 0.1);
+        }
+
+        /* Neonowe podświetlenie elementów */
+        .neon-info-table.ice-compact .info-item-compact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                #e6c3c3, 
+                #ffffff,
+                #e6c3c3);
+            opacity: 0.9;
+            border-radius: 1px 1px 0 0;
+        }
+
+        /* Teksty w gridzie */
+        .neon-info-table.ice-compact .info-label-compact {
+            font-family: 'Tilt Neon', sans-serif;
+            font-size: 0.75rem;
+            color: #ff6666;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            font-weight: 600;
+        }
+
+        .neon-info-table.ice-compact .info-value-compact {
+            font-family: 'Tilt Neon', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.3rem;
+            text-shadow: 0 0 6px rgba(255, 0, 0, 0.5);
+        }
+
+        .neon-info-table.ice-compact .info-description-compact {
+            font-family: 'Tilt Neon', sans-serif;
+            font-size: 0.75rem;
+            color: #ffaaaa;
+            line-height: 1.2;
+        }
+
+        /* Sekcja wymagań */
+        .neon-info-table.ice-compact .requirements-compact {
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(255, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .neon-info-table.ice-compact .requirements-compact {
+                margin-top: 0.8rem;
+                padding-top: 0.6rem;
+            }
+        }
+
+        .neon-info-table.ice-compact .requirements-title-compact {
+            font-family: 'Tilt Neon', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .neon-info-table.ice-compact .requirements-title-compact {
+                font-size: 0.9rem;
+                margin-bottom: 0.6rem;
+            }
+        }
+
+        .neon-info-table.ice-compact .requirements-list-compact {
+            list-style: none;
+            padding: 0;
+        }
+
+        .neon-info-table.ice-compact .requirement-item-compact {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.6rem;
+            padding: 0.6rem;
+            background: rgba(30, 0, 0, 0.7);
+            border-radius: 6px;
+            border-left: 3px solid #e6c3c3;
+        }
+
+        @media (max-width: 768px) {
+            .neon-info-table.ice-compact .requirement-item-compact {
+                margin-bottom: 0.5rem;
+                padding: 0.5rem;
+            }
+        }
+
+        .neon-info-table.ice-compact .requirement-number-compact {
+            min-width: 22px;
+            height: 22px;
+            background: rgba(255, 0, 0, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.6rem;
+            font-family: 'Tilt Neon', sans-serif;
+            font-weight: 700;
+            color: #cc0000;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 0, 0, 0.4);
+            flex-shrink: 0;
+        }
+
+        .neon-info-table.ice-compact .requirement-content-compact {
+            flex: 1;
+        }
+
+        .neon-info-table.ice-compact .requirement-text-compact {
+            font-family: 'Tilt Neon', sans-serif;
+            font-size: 0.8rem;
+            color: #ffffff;
+            margin-bottom: 0.2rem;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 768px) {
+            .neon-info-table.ice-compact .requirement-text-compact {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Kompaktowa stopka */
+        .neon-info-table.ice-compact .footer-note-compact {
+            font-family: 'Tilt Neon', sans-serif;
+            font-size: 0.75rem;
+            color: #ffb3b3;
+            background: rgba(200, 0, 0, 0.15);
+            padding: 0.6rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 0, 0, 0.25);
+            line-height: 1.3;
+        }
+
+        @media (max-width: 768px) {
+            .neon-info-table.ice-compact .requirement-note-compact {
+                font-size: 0.65rem;
+            }
+        }
+
+        /* Kompaktowa stopka */
+        .neon-info-table.ice-compact .table-footer-compact {
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(180, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .neon-info-table.ice-compact .table-footer-compact {
+                margin-top: 0.8rem;
+                padding-top: 0.6rem;
+            }
+        }
+
+        /* Kompaktowa stopka */
+        .neon-info-table.ice-compact .footer-note-compact {
+            font-family: 'Tilt Neon', sans-serif;
+            font-size: 0.75rem;
+            color: #ffb3b3;
+            background: rgba(200, 0, 0, 0.15);
+            padding: 0.6rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 0, 0, 0.25);
+            line-height: 1.3;
+        }
+
+        @media (max-width: 768px) {
+            .neon-info-table.ice-compact .footer-note-compact {
+                font-size: 0.7rem;
+                padding: 0.5rem;
+            }
+        }
+
+        .neon-info-table.ice-compact .footer-note-compact strong {
+            color: #cc0000;
+            font-weight: 700;
+        }
+
+        /* Lodowe kody (kompaktowe) */
+        .ice-code-compact {
+            display: inline-block;
+            padding: 0.1rem 0.4rem;
+            background: rgba(255, 0, 0, 0.15);
+            border-radius: 4px;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            color: #cc0000;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin: 0 0.1rem;
+            text-shadow: 0 0 4px rgba(255, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .ice-code-compact {
+                font-size: 0.75rem;
+                padding: 0.05rem 0.3rem;
+            }
+        }
+
+        /* Animacje */
+        @keyframes ice-compact-glow {
+            0% {
+                box-shadow: 
+                    0 0 10px rgba(255, 0, 0, 0.4),
+                    0 0 25px rgba(255, 50, 50, 0.2),
+                    0 0 40px rgba(255, 100, 100, 0.1),
+                    inset 0 0 15px rgba(255, 200, 200, 0.05);
+            }
+            100% {
+                box-shadow: 
+                    0 0 15px rgba(255, 0, 0, 0.6),
+                    0 0 35px rgba(255, 50, 50, 0.3),
+                    0 0 55px rgba(255, 100, 100, 0.2),
+                    inset 0 0 20px rgba(255, 200, 200, 0.1);
+            }
+        }
+
+        @keyframes ice-border-rotate {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes neon-side-glow {
+            0% {
+                opacity: 0.4;
+                box-shadow: 
+                    -3px 0 8px rgba(204, 0, 0, 0.3),
+                    -6px 0 12px rgba(255, 51, 51, 0.2);
+            }
+            100% {
+                opacity: 0.8;
+                box-shadow: 
+                    -3px 0 12px rgba(204, 0, 0, 0.6),
+                    -6px 0 20px rgba(255, 51, 51, 0.4);
+            }
+        }
+
+        /* customizable snowflake styling */
+        .snowflake {
+        color: #fff;
+        font-size: 1em;
+        font-family: Arial, sans-serif;
+        text-shadow: 0 0 5px #000;
+        }
+        
+        .snowflake,.snowflake .inner{animation-iteration-count:infinite;animation-play-state:running}@keyframes snowflakes-fall{0%{transform:translateY(0)}100%{transform:translateY(110vh)}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;user-select:none;cursor:default;pointer-events:none;animation-name:snowflakes-shake;animation-duration:3s;animation-timing-function:ease-in-out}.snowflake .inner{animation-duration:10s;animation-name:snowflakes-fall;animation-timing-function:linear}.snowflake:nth-of-type(0){left:1%;animation-delay:0s}.snowflake:nth-of-type(0) .inner{animation-delay:0s}.snowflake:first-of-type{left:10%;animation-delay:1s}.snowflake:first-of-type .inner,.snowflake:nth-of-type(8) .inner{animation-delay:1s}.snowflake:nth-of-type(2){left:20%;animation-delay:.5s}.snowflake:nth-of-type(2) .inner,.snowflake:nth-of-type(6) .inner{animation-delay:6s}.snowflake:nth-of-type(3){left:30%;animation-delay:2s}.snowflake:nth-of-type(11) .inner,.snowflake:nth-of-type(3) .inner{animation-delay:4s}.snowflake:nth-of-type(4){left:40%;animation-delay:2s}.snowflake:nth-of-type(10) .inner,.snowflake:nth-of-type(4) .inner{animation-delay:2s}.snowflake:nth-of-type(5){left:50%;animation-delay:3s}.snowflake:nth-of-type(5) .inner{animation-delay:8s}.snowflake:nth-of-type(6){left:60%;animation-delay:2s}.snowflake:nth-of-type(7){left:70%;animation-delay:1s}.snowflake:nth-of-type(7) .inner{animation-delay:2.5s}.snowflake:nth-of-type(8){left:80%;animation-delay:0s}.snowflake:nth-of-type(9){left:90%;animation-delay:1.5s}.snowflake:nth-of-type(9) .inner{animation-delay:3s}.snowflake:nth-of-type(10){left:25%;animation-delay:0s}.snowflake:nth-of-type(11){left:65%;animation-delay:2.5s}
+    </style>
+</head>
+<body>
+    <!-- Tło z grafiką -->
+    <div class="background-image">      
+    </div>
+
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+    </div>
+
+    <div class="mobile-top-logo">
+        <img src="./spinbetter.png" alt="SpinBetter" />
+    </div>
+    
+    <div class="content-overlay">
+        <!-- Sekcja główna -->
+        <section class="leaderboard-section">
+            <div class="santa-fade-container">
+                <img src="./pfp2.png" alt="Święta z Ciosem" class="santa-fade-image">
+            </div>
+
+            <h1 class="prize-amount" style="font-size: 3.5rem; margin-bottom: 0.5rem;">ŚWIĘTA Z CIOSEM</h1>
+            <div class="emphasis-headline-red">DLA 10 OSÓB ROZDANIE PO 1.000zł</div>
+
+            
+            <!-- informacje -->
+            <!-- Kompaktowa lodowa tabela z neonowymi dekoracjami -->
+            <div class="neon-info-table ice-compact">
+                <!-- Neonowe dekoracje -->
+
+                <div class="neon-side-line left"></div>
+                <div class="neon-side-line right"></div>
+                
+                <div class="table-inner">
+                    <!-- Nagłówek tabeli -->
+                    <div class="table-header">
+                        <h2 class="table-title">INFORMACJE O ROZDANIU</h2>
+                        <p class="table-subtitle">Wszystkie ważne szczegóły</p>
+                    </div>
+                    
+                    <!-- Kompaktowy grid z danymi -->
+                    <div class="info-grid-compact">
+                        <div class="info-item-compact">
+                            <div class="info-label-compact">LICZBA WYGRANYCH</div>
+                            <div class="info-value-compact">10 OSÓB</div>
+                            <div class="info-description-compact">Każda osoba: <span class="ice-code-compact">1.000zł</span></div>
+                        </div>
+                        
+                        <div class="info-item-compact">
+                            <div class="info-label-compact">CZĘSTOTLIWOŚĆ</div>
+                            <div class="info-value-compact">CO 2 DNI</div>
+                            <div class="info-description-compact">Nowy zwycięzca co 48h</div>
+                        </div>
+                        
+                        <div class="info-item-compact">
+                            <div class="info-label-compact">DATA STARTU</div>
+                            <div class="info-value-compact">3 GRUDNIA</div>
+                            <div class="info-description-compact">Konta od tej daty</div>
+                        </div>
+                        
+                        <div class="info-item-compact">
+                            <div class="info-label-compact">KOD PROMOCYJNY</div>
+                            <div class="info-value-compact"><span class="ice-code-compact">CIOS</span></div>
+                            <div class="info-description-compact">Wymagany przy rejestracji</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Kompaktowa sekcja wymagań -->
+                    <div class="requirements-compact">
+                        <h3 class="requirements-title-compact">WYMAGANE KROKI</h3>
+                        <ul class="requirements-list-compact">
+                            <li class="requirement-item-compact">
+                                <div class="requirement-number-compact">1</div>
+                                <div class="requirement-content-compact">
+                                    <div class="requirement-text-compact">Rejestracja na SpinBetter z kodem <span class="ice-code-compact">CIOS</span></div>
+                                    <div class="requirement-note-compact">Od 3 grudnia</div>
+                                </div>
+                            </li>
+                            <li class="requirement-item-compact">
+                                <div class="requirement-number-compact">2</div>
+                                <div class="requirement-content-compact">
+                                    <div class="requirement-text-compact">Aktywność na social mediach <span class="ice-code-compact">@mr_cios</span></div>
+                                    <div class="requirement-note-compact">Obserwuj i komentuj</div>
+                                </div>
+                            </li>
+                            <li class="requirement-item-compact">
+                                <div class="requirement-number-compact">3</div>
+                                <div class="requirement-content-compact">
+                                    <div class="requirement-text-compact">Wyślij DM na Instagramie</div>
+                                    <div class="requirement-note-compact">Hasło: <span class="ice-code-compact">"GOTOWE"</span> + ID konta</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Kompaktowa stopka -->
+                    <div class="table-footer-compact">
+                        <div class="footer-note-compact">
+                            <strong>WAŻNE:</strong> Tylko 18+. Nie jest to loteria. KYC niewymagane. Depozyt opcjonalny.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Sekcja rekomendacji -->
+        <section class="recommendations-section">
+
+            <h2 class="section-title">
+                CIOS <span class="magical-text">REKOMENDUJE</span>
+            </h2>
+            <p class="section-subtitle">
+                ODBIERZ NAJLEPSZE BONUSY
+            </p>
+            <div class="casino-card-container">
+                <div class="casino-card">
+                    <div class="casino-card-bg">
+                        <img alt="Spinbara Background" src="./banner1.png">
+                        <div class="casino-card-bg-overlay"></div>
+                    </div>
+                    <div class="casino-card-content">
+                        <div>
+                            <div class="casino-logo">
+                                <img alt="DudeSpin Logo" src="./spinbetter.png">
+                            </div>
+                            <div class="bonus-badge" >
+                                <span>BONUS POWITALNY</span>
+                            </div>
+                            <h4>111 FS z wagerem x15 do gry Chicken Chase™</h4>
+                            <p>bez depozytu</p>
+                            <div class="pros-section">
+                                <h5 class="pros-title">
+                                    Największe plusy
+                                </h5>
+                                <ul class="pros-list">
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 6 9 17l-5-5"></path>
+                                        </svg>
+                                        <span>Bonus powitalny 150%</span>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 6 9 17l-5-5"></path>
+                                        </svg>
+                                        <span>111 darmowych spinów</span>
+                                    </li>
+                                    <li>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 6 9 17l-5-5"></path>
+                                        </svg>
+                                        <span>Szybkie wypłaty w 24h</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bonus-button-container">
+                            <a href="https://redirspinner.com/2ASM?p=%2Fregistration%2F" target="_blank" rel="noopener noreferrer" class="bonus-button">
+                                <span>Odbierz Bonus</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-center">
+            <div class="divider-dot"></div>
+            <div class="divider-dot"></div>
+            <div class="divider-dot-main"><p>🎄</p></div>
+            <div class="divider-dot"></div>
+            <div class="divider-dot"></div>
+        </div>
+        <div class="divider-line-reverse"></div>
+    </div>
+
+    <!-- Sekcja instrukcji -->
+    <section class="instructions-section">
+        <div class="instructions-background">
+            <div class="instructions-overlay"></div>
+        </div>
+        <div class="instructions-container">
+            <h2 class="instructions-title">
+                Przydatne <span class="instructions-gradient">Instrukcje</span>
+            </h2>
+            <div class="instructions-grid">
+                <!-- Karta 1 - AKTYWNA -->
+                <a class="instruction-link" href="./wplacanie.html">
+                    <div class="instruction-card active">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 16v-4"></path>
+                                <path d="M12 8h.01"></path>
+                            </svg>
+                        </div>
+                        <div class="instruction-content">
+                            <h3 class="instruction-title">Jak wpłacać poprzez krypto</h3>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Karta 2 - Aktywna -->
+                <a class="instruction-link" href="./instrukcje.html">
+                    <div class="instruction-card active">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 16v-4"></path>
+                                <path d="M12 8h.01"></path>
+                            </svg>
+                        </div>
+                        <div class="instruction-content">
+                            <h3 class="instruction-title">Jak ominąć blokady dostawcy internetu</h3>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Karta 3 - AKTYWNA -->
+                <a class="instruction-link" href="./wyplacanie.html">
+                    <div class="instruction-card active">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 16v-4"></path>
+                                <path d="M12 8h.01"></path>
+                            </svg>
+                        </div>
+                        <div class="instruction-content">
+                            <h3 class="instruction-title">Jak bezpiecznie wypłacać</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Nowy footer -->
+    <footer class="footer-disclaimer">
+        <p class="footer-text">
+            <strong>Ważna informacja:</strong> Ta strona internetowa prezentuje informacje o ekskluzywnych kasynach oraz zawiera odnośniki partnerskie, które są przeznaczone wyłącznie dla osób przebywających w regionach, gdzie internetowe gry losowe są dozwolone przez prawo.<br>
+            Obowiązkiem użytkowników jest upewnienie się, że ich aktywność jest zgodna z lokalnymi przepisami. Nie zachęcamy ani nie popieramy nielegalnych form hazardu.<br>
+            Zanim skorzystasz z jakichkolwiek ofert przedstawionych na tej stronie, gorąco rekomendujemy zweryfikowanie legalności hazardu online w Twojej lokalizacji.
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileLogo = document.querySelector('.mobile-top-logo');
+            let lastScrollTop = 0;
+            const scrollThreshold = 100; // Po jakim przesunięciu logo ma znikać (w pikselach)
+            
+            if (mobileLogo && window.innerWidth <= 768) {
+                window.addEventListener('scroll', function() {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (scrollTop > scrollThreshold) {
+                        // Jeśli przewinęliśmy więcej niż threshold, ukrywamy logo
+                        mobileLogo.classList.add('hidden');
+                    } else {
+                        // Jeśli jesteśmy blisko góry, pokazujemy logo
+                        mobileLogo.classList.remove('hidden');
+                    }
+                    
+                    lastScrollTop = scrollTop;
+                });
+                
+                // Opcjonalnie: ukryj logo po kliknięciu (jeśli chcesz)
+                mobileLogo.addEventListener('click', function() {
+                    this.classList.add('hidden');
+                });
+            }
+        });
+        </script>
+</body>
+</html>
