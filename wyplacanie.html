@@ -57,7 +57,7 @@
             border-radius: 30px;
             overflow: hidden;
             margin-bottom: 3rem;
-            border: 2px solid #d3e512;
+            border: 2px solid #b8860b;
         }
         
         .hero-background {
@@ -86,7 +86,7 @@
         }
         
         .gold-texture {
-            background: linear-gradient(to right, #b6c510, #ddf014);
+            background: linear-gradient(to right, #b8860b, #ffd700);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -104,8 +104,8 @@
         }
         
         .warning-box {
-            background: #8f000034;
-            border-left: 3px solid #ff000081;
+            background: rgba(184, 134, 11, 0.15);
+            border-left: 3px solid #b8860b;
             padding: 1.5rem;
             border-radius: 8px;
             margin: 2rem 0;
@@ -129,7 +129,7 @@
             position: relative;
             border-radius: 20px;
             overflow: hidden;
-            border: 2px solid #d3e512;
+            border: 2px solid #b8860b;
             background: rgb(19, 19, 19);
             padding: 2rem;
             height: 100%;
@@ -139,7 +139,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            background: linear-gradient(to right, #b6c510, #ddf014);
+            background: linear-gradient(to right, #b8860b, #ffd700);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -162,7 +162,7 @@
         
         .referral-link {
             display: inline-block;
-            background: linear-gradient(to right, #b6c510, #ddf014);
+            background: linear-gradient(to right, #b8860b, #ffd700);
             color: black;
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -183,7 +183,7 @@
             padding: 1.5rem;
             background: rgba(19, 19, 19, 0.7);
             border-radius: 12px;
-            border: 1px solid rgba(211, 229, 18, 0.2);
+            border: 1px solid rgba(184, 134, 11, 0.2);
         }
         
         .disclaimer-text {
@@ -211,14 +211,14 @@
             border-radius: 30px;
             text-decoration: none;
             font-weight: 700;
-            border: 1px solid rgba(211, 229, 18, 0.3);
+            border: 1px solid rgba(184, 134, 11, 0.3);
             transition: all 0.3s;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
         }
         
         .back-link:hover {
-            color: #d3e512;
-            border-color: #d3e512;
+            color: #b8860b;
+            border-color: #b8860b;
             transform: translateY(-2px);
         }
         
@@ -246,22 +246,47 @@
             }
         }
 
-        /* Alternatywna wersja z grubszymi paskami */
+        /* Candy cane border */
         .candy-cane-border-thick {
             border: 4px solid transparent;
             background: 
                 linear-gradient(rgba(12, 12, 12, 1), rgba(12, 12, 12, 1)) padding-box,
                 repeating-linear-gradient(
                     45deg,
-                    #ff0000 0%,
-                    #ff0000 20px,
+                    #ffffff 0%,
+                    #ffffff 20px,
                     #ffffff 20px,
                     #ffffff 40px
                 ) border-box;
             box-shadow: 
-                0 0 25px rgba(255, 255, 255, 0.28),
-                0 0 50px rgba(255, 0, 0, 0.12),
+                0 0 25px rgba(184, 134, 11, 0.28),
+                0 0 50px rgba(184, 134, 11, 0.12),
                 inset 0 0 15px rgba(255, 255, 255, 0.15);
+        }
+
+        .steps-list {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .steps-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .fee-info {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(184, 134, 11, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #b8860b;
+        }
+
+        .referral-links {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
     </style>
 </head>
@@ -380,14 +405,14 @@
                     Chyba najprostszy sposób.
                 </p>
                 
-                <h4 style="margin: 1.5rem 0 1rem 0; color: #d3e512;">Co trzeba zrobić najpierw?</h4>
+                <h4 style="margin: 1.5rem 0 1rem 0; color: #b8860b;">Co trzeba zrobić najpierw?</h4>
                 <ul class="steps-list">
                     <li>Rejestracja na Crypto.com</li>
                     <li>Zamówienie karty</li>
                     <li>Instalacja Trust Wallet</li>
                 </ul>
                 
-                <h4 style="margin: 1.5rem 0 1rem 0; color: #d3e512;">A potem:</h4>
+                <h4 style="margin: 1.5rem 0 1rem 0; color: #b8860b;">A potem:</h4>
                 <ul class="steps-list">
                     <li>Wypłata z kasyna w tym co się najbardziej opłaca przez niskie opłaty, np. LTC na portfel w Trust Wallet</li>
                     <li>Wysyłka z Trust Wallet na konto w Crypto.com</li>
@@ -399,13 +424,13 @@
                     <strong>Teoretycznie można od razu z kasyna na Crypto.com, pomijając etap Trust Wallet, ale nie ma co ryzykować, zwiększamy bezpieczeństwo dzięki temu - Crypto.com dzięki temu nie wie że pieniądze są z kasyna.</strong>
                 </div>
                 
-                <h4 style="margin: 1.5rem 0 1rem 0; color: #d3e512;">Alternatywna ścieżka:</h4>
+                <h4 style="margin: 1.5rem 0 1rem 0; color: #b8860b;">Alternatywna ścieżka:</h4>
                 <p class="method-text">
                     <strong>Kasyno → Binance/ByBit → Zen → Bankomat/Sklep</strong><br>
                     Korzystamy tutaj z tego że Binance ma współpracę z ZEN.
                 </p>
                 
-                <h4 style="margin: 1.5rem 0 1rem 0; color: #d3e512;">Co trzeba zrobić najpierw?</h4>
+                <h4 style="margin: 1.5rem 0 1rem 0; color: #b8860b;">Co trzeba zrobić najpierw?</h4>
                 <ul class="steps-list">
                     <li>Rejestracja na Binance/ByBit</li>
                     <li>Rejestracja na ZEN</li>
@@ -413,7 +438,7 @@
                     <li>Instalacja Trust Wallet</li>
                 </ul>
                 
-                <h4 style="margin: 1.5rem 0 1rem 0; color: #d3e512;">A potem:</h4>
+                <h4 style="margin: 1.5rem 0 1rem 0; color: #b8860b;">A potem:</h4>
                 <ul class="steps-list">
                     <li>Wypłata z kasyna w tym co się najbardziej opłaca przez niskie opłaty, np. LTC na portfel w Trust Wallet</li>
                     <li>Wysyłka z Trust Wallet na Binance/ByBit</li>
